@@ -13,8 +13,8 @@ model_path = os.path.join(
     "used_car_price_model.pkl.gz"
 )
 
-with gzip.open(model_path, "rb") as file:
-    model = joblib.load(file)
+model = joblib.load(model_path)
+
 
 # Page title
 st.title("Used Car Price Prediction")
