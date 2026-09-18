@@ -3,7 +3,18 @@ import pandas as pd
 import joblib
 
 # Load the trained model
-model = joblib.load("used_car_price_model.pkl")
+import streamlit as st
+import joblib
+import gzip
+import os
+
+model_path = os.path.join(
+    os.path.dirname(__file__),
+    "used_car_price_model.pkl.gz"
+)
+
+with gzip.open(model_path, "rb") as file:
+    model = joblib.load(file)
 
 # Page title
 st.title("Used Car Price Prediction")
