@@ -10,7 +10,7 @@ import os
 
 model_path = os.path.join(
     os.path.dirname(__file__),
-    "used_car_price_model.pkl.gz"
+    "used_car_price_model.pkl"
 )
 
 model = joblib.load(model_path)
